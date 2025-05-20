@@ -48,8 +48,8 @@ const CourseHighlights = () => {
           <h3 className="text-xl font-bold text-center text-gray-800 uppercase tracking-wide mb-4">Government Aided</h3>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {courses.slice(0, 3).map((course, index) => (
-              <Link href={course.link} key={index} className="group block">
-                <div className="rounded-xl overflow-hidden bg-white border shadow-sm transition-transform transform hover:scale-[1.02] hover:shadow-lg">
+              <Link href={course.link} key={index}>
+                <div className="rounded-xl overflow-hidden bg-white shadow-md transition-transform transform hover:scale-[1.02] hover:shadow-lg">
                   <Image 
                     src={course.imageUrl}
                     alt={course.title}
@@ -74,7 +74,7 @@ const CourseHighlights = () => {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {courses.slice(3).map((course, index) => (
               <Link href={course.link} key={index} className="group block">
-                <div className="rounded-xl overflow-hidden bg-white border shadow-sm transition-transform transform hover:scale-[1.02] hover:shadow-lg">
+                <div className="rounded-xl overflow-hidden bg-white shadow-md transition-transform transform hover:scale-[1.02] hover:shadow-lg">
                   <Image 
                     src={course.imageUrl}
                     alt={course.title}

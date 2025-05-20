@@ -1,6 +1,6 @@
 import React from 'react';
 import Link from 'next/link';
-import { MapPinned ,Link as LinkIcon} from 'lucide-react';
+import { MapPinned, Link as LinkIcon } from 'lucide-react';
 
 const Footer = () => {
   return (
@@ -12,7 +12,7 @@ const Footer = () => {
             <h3 className="text-2xl font-semibold mb-6 flex items-center">
               <span className="mr-2"><LinkIcon /></span> Quick Links
             </h3>
-            <div className="grid grid-cols-2 gap-6">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
               <ul className="space-y-2">
                 {[
                   ['About Us', '/about'],
@@ -61,15 +61,14 @@ const Footer = () => {
               <span className="mr-2"><MapPinned /></span> Contact Address
             </h3>
             <div className="space-y-2 text-sm text-carmel-light leading-relaxed">
-  <p className="font-semibold text-white">Carmel Polytechnic College</p>
-  <p>Punnapra, Alappuzha - 688 004, Kerala, India.</p>
-  <p><span className="font-medium">Phone (Office):</span> 0477 2287 825</p>
-  <p><span className="font-medium">Phone (Self Financing):</span> 0477 2288 825</p>
-  <p><span className="font-medium">Admission Cell:</span> 80783 25976</p>
-  <p><span className="font-medium">Fax:</span> 0477 2286 048</p>
-  <p><span className="font-medium">Email:</span> <a href="mailto:info@carmelpoly.in" className="underline hover:text-white">info@carmelpoly.in</a></p>
-</div>
-
+              <p className="font-semibold text-white">Carmel Polytechnic College</p>
+              <p>Punnapra, Alappuzha - 688 004, Kerala, India.</p>
+              <p><span className="font-medium">Phone (Office):</span> 0477 2287 825</p>
+              <p><span className="font-medium">Phone (Self Financing):</span> 0477 2288 825</p>
+              <p><span className="font-medium">Admission Cell:</span> 80783 25976</p>
+              <p><span className="font-medium">Fax:</span> 0477 2286 048</p>
+              <p><span className="font-medium">Email:</span> <a href="mailto:info@carmelpoly.in" className="underline hover:text-white">info@carmelpoly.in</a></p>
+            </div>
           </div>
         </div>
 

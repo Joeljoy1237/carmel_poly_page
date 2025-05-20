@@ -1,17 +1,33 @@
-"use client"
-import React, { useState } from 'react';
-import Link from 'next/link';
-import { Menu, X, ChevronDown } from 'lucide-react';
-import Image from 'next/image';
-// import { Button } from '@/components/ui/button';
+"use client";
+import React, { useState, useRef, useEffect } from 'react';
+import Link from "next/link";
+import { Menu, X, ChevronDown } from "lucide-react";
+import Image from "next/image";
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [openDropdown, setOpenDropdown] = useState<string | null>(null);
+  const dropdownRef = useRef<HTMLDivElement>(null);
 
   const toggleDropdown = (name: string) => {
     setOpenDropdown(openDropdown === name ? null : name);
   };
+
+  useEffect(() => {
+    const handleClickOutside = (event: MouseEvent) => {
+      if (
+        dropdownRef.current &&
+        !dropdownRef.current.contains(event.target as Node)
+      ) {
+        setOpenDropdown(null);
+      }
+    };
+
+    document.addEventListener('mousedown', handleClickOutside);
+    return () => {
+      document.removeEventListener('mousedown', handleClickOutside);
+    };
+  }, []);
 
   const navItems = [
     { name: "Home", link: "/" },
@@ -23,10 +39,7 @@ const Navbar = () => {
         { name: "Management", link: "/about/management" },
       ],
     },
-    {
-      name: "Admissions",
-      link: "/admissions",
-    },
+    { name: "Admissions", link: "/admissions" },
     {
       name: "Departments",
       dropdown: [
@@ -64,54 +77,68 @@ const Navbar = () => {
   ];
 
   return (
-    <nav className="bg-white shadow-md sticky top-0 z-50 px-10">
-      <div className="container mx-auto">
-        {/* Main Navbar */}
-        <div className="flex justify-between items-center px-4 py-3">
-          <Link href="/" className="flex items-center space-x-2">
-            <Image src="/logo_main.png" alt="Carmel Polytechnic Logo" width={100} height={100} className="h-15 w-auto" />
-            <div className="flex flex-col">
-              <span className="font-bold text-xl text-carmel-dark uppercase">Carmel</span>
-              <span className="font-bold text-lg text-carmel-dark uppercase">Polytechnic College</span>
-              <span className="text-xs text-gray-500 uppercase">Punnapra · Alappuzha</span>
+    <nav className="bg-white shadow-md sticky top-0 px-10 z-50">
+      <div className="container mx-auto px-4">
+        {/* Top Section */}
+        <div className="flex justify-between items-center py-4">
+          <Link href="/" className="flex items-center gap-3">
+            <Image
+              src="/logo_main.png"
+              alt="Carmel Polytechnic Logo"
+              width={60}
+              height={60}
+              className="h-14 w-auto object-contain"
+            />
+            <div className="leading-tight">
+              <h1 className="text-xl font-bold text-carmel-dark uppercase">
+                Carmel
+              </h1>
+              <h2 className="text-md font-semibold text-carmel-dark uppercase">
+                Polytechnic College
+              </h2>
+              <p className="text-xs text-gray-500 uppercase tracking-wide">
+                Punnapra · Alappuzha
+              </p>
             </div>
           </Link>
 
-          {/* Mobile Menu Button */}
-          <div className="md:hidden">
-            <button onClick={() => setIsMenuOpen(!isMenuOpen)} className="p-2">
-              {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
-            </button>
-          </div>
+          {/* Mobile Menu Icon */}
+          <button
+            onClick={() => setIsMenuOpen(!isMenuOpen)}
+            className="md:hidden p-2 focus:outline-none"
+          >
+            {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
+          </button>
 
           {/* Desktop Menu */}
-          <div className="hidden md:flex items-center space-x-1">
+          <div className="hidden md:flex items-center space-x-4" ref={dropdownRef}>
             {navItems.map((item) => (
-              <div key={item.name} className="relative group">
+              <div key={item.name} className="relative">
                 {item.dropdown ? (
                   <button
                     onClick={() => toggleDropdown(item.name)}
-                    className="px-3 py-2 rounded hover:bg-carmel-light flex items-center text-gray-800 font-medium"
+                    className="flex items-center gap-1 px-4 py-2 rounded-md font-semibold text-gray-700 hover:bg-carmel-light transition"
                   >
                     {item.name}
-                    <ChevronDown size={18} className="ml-1" />
+                    <ChevronDown size={16} />
                   </button>
                 ) : (
                   <Link
                     href={item.link || "#"}
-                    className="px-3 py-2 rounded hover:bg-carmel-light text-gray-800 font-medium"
+                    className="px-4 py-2 rounded-md font-medium text-gray-700 hover:bg-carmel-light transition"
                   >
                     {item.name}
                   </Link>
                 )}
 
+                {/* Dropdown Menu */}
                 {item.dropdown && openDropdown === item.name && (
-                  <div className="absolute bg-white mt-1 py-2 shadow-lg rounded-md w-48 z-10">
+                  <div className="absolute mt-2 bg-white shadow-lg rounded-md w-52 z-20 animate-fade-in">
                     {item.dropdown.map((dropdownItem) => (
                       <Link
                         key={dropdownItem.name}
                         href={dropdownItem.link}
-                        className="block px-4 py-2 hover:bg-carmel-light text-gray-700"
+                        className="block px-4 py-2 text-sm text-gray-800 hover:bg-gray-100 transition"
                       >
                         {dropdownItem.name}
                       </Link>
@@ -123,9 +150,9 @@ const Navbar = () => {
           </div>
         </div>
 
-        {/* Mobile Menu */}
+        {/* Mobile Dropdown Menu */}
         {isMenuOpen && (
-          <div className="md:hidden bg-white border-t animate-slide-in">
+          <div className="md:hidden border-t pt-2 animate-slide-in">
             {navItems.map((item) => (
               <div key={item.name} className="border-b">
                 {item.dropdown ? (
@@ -143,12 +170,12 @@ const Navbar = () => {
                       />
                     </button>
                     {openDropdown === item.name && (
-                      <div className="bg-gray-50 pl-6">
+                      <div className="bg-gray-50">
                         {item.dropdown.map((dropdownItem) => (
                           <Link
                             key={dropdownItem.name}
                             href={dropdownItem.link}
-                            className="block px-4 py-2 border-b border-gray-100 text-gray-700"
+                            className="block px-6 py-2 text-sm text-gray-700 hover:bg-gray-100 transition"
                           >
                             {dropdownItem.name}
                           </Link>
@@ -159,7 +186,7 @@ const Navbar = () => {
                 ) : (
                   <Link
                     href={item.link || "#"}
-                    className="block px-4 py-3 text-gray-800"
+                    className="block px-4 py-3 text-gray-800 hover:bg-gray-50"
                     onClick={() => setIsMenuOpen(false)}
                   >
                     {item.name}
