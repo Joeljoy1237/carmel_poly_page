@@ -138,7 +138,7 @@ const Navbar = () => {
                       <Link
                         key={dropdownItem.name}
                         href={dropdownItem.link}
-                        className="block px-4 py-2 text-sm text-gray-800 hover:bg-gray-100 transition"
+                        className="block px-4 py-2 text-sm font-medium text-gray-800 hover:bg-gray-100 transition"
                       >
                         {dropdownItem.name}
                       </Link>

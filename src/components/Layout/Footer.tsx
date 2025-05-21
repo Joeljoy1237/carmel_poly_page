@@ -63,9 +63,9 @@ const Footer = () => {
             <div className="space-y-2 text-sm text-carmel-light leading-relaxed">
               <p className="font-semibold text-white">Carmel Polytechnic College</p>
               <p>Punnapra, Alappuzha - 688 004, Kerala, India.</p>
-              <p><span className="font-medium">Phone (Office):</span> 0477 2287 825</p>
-              <p><span className="font-medium">Phone (Self Financing):</span> 0477 2288 825</p>
-              <p><span className="font-medium">Admission Cell:</span> 80783 25976</p>
+              <p><Link href={"tel:04772287825"}><span className="font-medium">Phone (Office):</span> 0477 2287 825</Link></p>
+              <p><Link href={"tel:04772288825"}><span className="font-medium">Phone (Self Financing):</span> 0477 2288 825</Link></p>
+              <p><Link href={"tel:8078325976"}><span className="font-medium">Admission Cell:</span> 80783 25976</Link></p>
               <p><span className="font-medium">Fax:</span> 0477 2286 048</p>
               <p><span className="font-medium">Email:</span> <a href="mailto:info@carmelpoly.in" className="underline hover:text-white">info@carmelpoly.in</a></p>
             </div>
