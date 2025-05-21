@@ -71,6 +71,7 @@ const Navbar = () => {
       dropdown: [
         { name: "Fee Structure", link: "/fee/structure" },
         { name: "Scholarships", link: "/fee/scholarships" },
+        {name:"Make Fee Payment",link:"https://paydirect.eduqfix.com/app/pDLKjv890e9C7JJO7lFy48t46jszRZdQNjam0ONL899cRUw51zOGe+TM23UqdJdi/6530"}
       ],
     },
     { name: "Contact Us", link: "/contact" },
