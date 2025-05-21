@@ -32,7 +32,7 @@ const Home = () => {
   return (
     <>
       {showPopup && (
-        <div className="fixed inset-0 backdrop-blur-xs bg-opacity-10 flex items-center justify-center z-50 p-4 animate-fade-in">
+        <div className="fixed inset-0 bg-gray-800/30 backdrop-blur-xs flex items-center justify-center z-50 p-4 animate-fade-in ">
           <div className="bg-white rounded-lg overflow-hidden w-[90vw] md:w-[50vw] relative shadow-xl">
             <button
               onClick={() => setShowPopup(false)}
