@@ -56,41 +56,42 @@ const Home = () => {
 
               {/* Content Section */}
               <div className="md:w-1/2 w-full p-6">
-                <h2 className="text-2xl font-bold text-center mb-4 text-blue-800">
-                  Diploma Admissions 2025
-                </h2>
+  <h2 className="text-2xl font-bold text-center mb-4 text-blue-800">
+    Diploma Admissions 2025
+  </h2>
 
-                <div className="mb-6">
-                  <p className="font-semibold mb-3 text-gray-700">
-                    Contact &gt;&gt;
-                  </p>
-                  <div className="space-y-2">
-                    <a
-                      href="tel:8078325976"
-                      className="block hover:text-blue-600 transition-colors"
-                    >
-                      80783 25976
-                    </a>
-                    <a
-                      href="tel:04772288825"
-                      className="block hover:text-blue-600 transition-colors"
-                    >
-                      0477 2288 825
-                    </a>
-                  </div>
-                </div>
+  <div className="mb-6 ml-6">
+    <p className="font-semibold mb-2 text-gray-700">
+      For Admission Enquiries:
+    </p>
+    <div className="space-y-1 ml-4 text-gray-800">
+      <a
+        href="tel:8078325976"
+        className="block hover:text-blue-600 transition-colors"
+      >
+        80783 25976
+      </a>
+      <a
+        href="tel:04772288825"
+        className="block hover:text-blue-600 transition-colors"
+      >
+        0477 2288 825
+      </a>
+    </div>
+  </div>
 
-                <div className="text-center mt-6">
-                  <a
-                    href="https://admissions.carmelpoly.in/"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="inline-block bg-gradient-to-r from-blue-600 to-blue-800 text-white px-6 py-3 rounded-lg hover:from-blue-700 hover:to-blue-900 transition-all shadow-md hover:shadow-lg"
-                  >
-                    For Registration: CLICK HERE
-                  </a>
-                </div>
-              </div>
+  <div className="text-center mt-6">
+    <a
+      href="https://admissions.carmelpoly.in/"
+      target="_blank"
+      rel="noopener noreferrer"
+      className="inline-block bg-gradient-to-r from-blue-600 to-blue-800 text-white px-6 py-3 rounded-lg hover:from-blue-700 hover:to-blue-900 transition-all shadow-md hover:shadow-lg"
+    >
+      Click Here to Register Online
+    </a>
+  </div>
+</div>
+
             </div>
           </div>
         </div>
