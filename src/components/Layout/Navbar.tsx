@@ -160,7 +160,8 @@ const Navbar = () => {
         {/* Mobile Dropdown Menu */}
        {isMenuOpen && (
   <div
-    className="md:hidden border-t pt-3 bg-white shadow-md rounded-b-lg animate-slide-in fixed inset-x-0 top-[headerHeight] z-50"
+            className="md:hidden border-t pt-3 bg-white shadow-md rounded-b-lg animate-slide-in fixed inset-x-0 top-[headerHeight] z-50"
+            ref={dropdownRef}
   >
     {navItems.map((item) => (
       <div key={item.name} className="border-b border-gray-200">
