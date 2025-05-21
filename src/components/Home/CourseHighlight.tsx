@@ -44,7 +44,7 @@ const CourseHighlights = () => {
         </h2>
 
         {/* GOVERNMENT AIDED */}
-        <div className="mt-12 mb-6">
+        <div className=" mb-6">
           <h3 className="text-xl font-bold text-center text-gray-800 uppercase tracking-wide mb-4">Government Aided</h3>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {courses.slice(0, 3).map((course, index) => (

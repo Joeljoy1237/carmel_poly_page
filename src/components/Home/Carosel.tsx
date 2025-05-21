@@ -16,56 +16,56 @@ type Slide = {
 const slides: Slide[] = [
   {
     title: "Admissions",
-    year: "2025–2026",
+    year: "2025 – 2026",
     description: `Carmel Polytechnic College was established in 1958 by Very Rev. Fr. Gilbert Palakunnel CMI and is managed by CMI Fathers – a priestly order reputed for their contributions in the field of education and healthcare. The institution draws spiritual inspiration from `,
     highlight: "St. Kuriakose Elias Chavara",
     image: "/slide_001.png",
   },
   {
     title: "Admissions",
-    year: "2025–2026",
+    year: "2025 – 2026",
     description: `Carmel Polytechnic College was established in 1958 by Very Rev. Fr. Gilbert Palakunnel CMI and is managed by CMI Fathers – a priestly order reputed for their contributions in the field of education and healthcare. The institution draws spiritual inspiration from `,
     highlight: "St. Kuriakose Elias Chavara",
     image: "/slide_002.png",
   },{
     title: "Admissions",
-    year: "2025–2026",
+    year: "2025 – 2026",
     description: `Carmel Polytechnic College was established in 1958 by Very Rev. Fr. Gilbert Palakunnel CMI and is managed by CMI Fathers – a priestly order reputed for their contributions in the field of education and healthcare. The institution draws spiritual inspiration from `,
     highlight: "St. Kuriakose Elias Chavara",
     image: "/slide_003.png",
   },{
     title: "Admissions",
-    year: "2025–2026",
+    year: "2025 – 2026",
     description: `Carmel Polytechnic College was established in 1958 by Very Rev. Fr. Gilbert Palakunnel CMI and is managed by CMI Fathers – a priestly order reputed for their contributions in the field of education and healthcare. The institution draws spiritual inspiration from `,
     highlight: "St. Kuriakose Elias Chavara",
     image: "/slide_004.png",
   },{
     title: "Admissions",
-    year: "2025–2026",
+    year: "2025 – 2026",
     description: `Carmel Polytechnic College was established in 1958 by Very Rev. Fr. Gilbert Palakunnel CMI and is managed by CMI Fathers – a priestly order reputed for their contributions in the field of education and healthcare. The institution draws spiritual inspiration from `,
     highlight: "St. Kuriakose Elias Chavara",
     image: "/slide_005.png",
   },{
     title: "Admissions",
-    year: "2025–2026",
+    year: "2025 – 2026",
     description: `Carmel Polytechnic College was established in 1958 by Very Rev. Fr. Gilbert Palakunnel CMI and is managed by CMI Fathers – a priestly order reputed for their contributions in the field of education and healthcare. The institution draws spiritual inspiration from `,
     highlight: "St. Kuriakose Elias Chavara",
     image: "/slide_006.png",
   },{
     title: "Admissions",
-    year: "2025–2026",
+    year: "2025 – 2026",
     description: `Carmel Polytechnic College was established in 1958 by Very Rev. Fr. Gilbert Palakunnel CMI and is managed by CMI Fathers – a priestly order reputed for their contributions in the field of education and healthcare. The institution draws spiritual inspiration from `,
     highlight: "St. Kuriakose Elias Chavara",
     image: "/slide_007.png",
   },{
     title: "Admissions",
-    year: "2025–2026",
+    year: "2025 – 2026",
     description: `Carmel Polytechnic College was established in 1958 by Very Rev. Fr. Gilbert Palakunnel CMI and is managed by CMI Fathers – a priestly order reputed for their contributions in the field of education and healthcare. The institution draws spiritual inspiration from `,
     highlight: "St. Kuriakose Elias Chavara",
     image: "/slide_008.png",
   },{
     title: "Admissions",
-    year: "2025–2026",
+    year: "2025 – 2026",
     description: `Carmel Polytechnic College was established in 1958 by Very Rev. Fr. Gilbert Palakunnel CMI and is managed by CMI Fathers – a priestly order reputed for their contributions in the field of education and healthcare. The institution draws spiritual inspiration from `,
     highlight: "St. Kuriakose Elias Chavara",
     image: "/slide_009.png",
@@ -112,8 +112,9 @@ const HeroCarousel = () => {
           {slides[currentIndex].logo && (
             <Image
               src={slides[currentIndex].logo}
-              width={500}
-              height={500}
+              width={200}
+              height={200}
+              loading='lazy'
               alt="Logo"
               className="w-16 h-16 sm:w-20 sm:h-20 object-contain"
             />
