@@ -32,7 +32,7 @@ const Home = () => {
   return (
     <>
       {showPopup && (
-        <div className="fixed inset-0 backdrop-blur-sm bg-opacity-10 flex items-center justify-center z-50 p-4">
+        <div className="fixed inset-0 backdrop-blur-xs bg-opacity-10 flex items-center justify-center z-50 p-4 animate-fade-in">
           <div className="bg-white rounded-lg overflow-hidden w-[90vw] md:w-[50vw] relative shadow-xl">
             <button
               onClick={() => setShowPopup(false)}
@@ -47,8 +47,8 @@ const Home = () => {
                 <Image
                   src="/slide_002.png"
                   alt="B.Tech Admissions 2025"
-                  width={600}
-                  height={400}
+                  width={300}
+                  height={200}
                   className="w-full h-full object-cover"
                   priority
                 />
@@ -57,7 +57,7 @@ const Home = () => {
               {/* Content Section */}
               <div className="md:w-1/2 w-full p-6">
                 <h2 className="text-2xl font-bold text-center mb-4 text-blue-800">
-                  B. Tech Admissions 2025
+                  Diploma Admissions 2025
                 </h2>
 
                 <div className="mb-6">
