@@ -158,67 +158,55 @@ const Navbar = () => {
         </div>
 
         {/* Mobile Dropdown Menu */}
-        {isMenuOpen && (
-          <div
-            className="md:hidden border-t pt-3 bg-white shadow-md rounded-b-lg animate-slide-in fixed inset-x-0 top-[headerHeight] z-50"
-            onClick={(e) => e.stopPropagation()} // Add this line
-          >
-            {navItems.map((item) => (
-              <div key={item.name} className="border-b border-gray-200">
-                {item.dropdown ? (
-                  <>
-                    <button
-                      onClick={(e) => {
-                        e.stopPropagation(); // Add this line
-                        toggleDropdown(item.name);
-                      }}
-                      className="w-full px-4 py-3 flex justify-between items-center text-gray-800 font-medium hover:bg-gray-100 transition"
-                    >
-                      {item.name}
-                      <ChevronDown
-                        size={18}
-                        className={`transition-transform duration-300 ${
-                          openDropdown === item.name ? "rotate-180" : ""
-                        }`}
-                      />
-                    </button>
-                    {openDropdown === item.name && (
-                      <div
-                        className="bg-gray-50 px-4 py-2 space-y-1 animate-slide-in"
-                        onClick={(e) => e.stopPropagation()} // Add this line
-                      >
-                        {item.dropdown.map((dropdownItem) => (
-                          <Link
-                            key={dropdownItem.name}
-                            href={dropdownItem.link}
-                            className="block px-3 py-2 text-sm text-gray-700 rounded-md hover:bg-white transition"
-                            onClick={(e) => {
-                              e.stopPropagation(); // Add this line
-                              setIsMenuOpen(false);
-                            }}
-                          >
-                            {dropdownItem.name}
-                          </Link>
-                        ))}
-                      </div>
-                    )}
-                  </>
-                ) : (
+       {isMenuOpen && (
+  <div
+    className="md:hidden border-t pt-3 bg-white shadow-md rounded-b-lg animate-slide-in fixed inset-x-0 top-[headerHeight] z-50"
+  >
+    {navItems.map((item) => (
+      <div key={item.name} className="border-b border-gray-200">
+        {item.dropdown ? (
+          <>
+            <button
+              onClick={() => toggleDropdown(item.name)}
+              className="w-full px-4 py-3 flex justify-between items-center text-gray-800 font-medium hover:bg-gray-100 transition"
+            >
+              {item.name}
+              <ChevronDown
+                size={18}
+                className={`transition-transform duration-300 ${
+                  openDropdown === item.name ? "rotate-180" : ""
+                }`}
+              />
+            </button>
+            {openDropdown === item.name && (
+              <div className="bg-gray-50 px-4 py-2 space-y-1 animate-slide-in">
+                {item.dropdown.map((dropdownItem) => (
                   <Link
-                    href={item.link || "#"}
-                    className="block px-4 py-3 text-gray-800 font-medium hover:bg-gray-100 transition"
-                    onClick={(e) => {
-                      e.stopPropagation(); // Add this line
-                      setIsMenuOpen(false);
-                    }}
+                    key={dropdownItem.name}
+                    href={dropdownItem.link}
+                    className="block px-3 py-2 text-sm text-gray-700 rounded-md hover:bg-white transition"
+                    onClick={() => setIsMenuOpen(false)}
                   >
-                    {item.name}
+                    {dropdownItem.name}
                   </Link>
-                )}
+                ))}
               </div>
-            ))}
-          </div>
+            )}
+          </>
+        ) : (
+          <Link
+            href={item.link || "#"}
+            className="block px-4 py-3 text-gray-800 font-medium hover:bg-gray-100 transition"
+            onClick={() => setIsMenuOpen(false)}
+          >
+            {item.name}
+          </Link>
         )}
+      </div>
+    ))}
+  </div>
+)}
+
       </div>
     </nav>
   );
